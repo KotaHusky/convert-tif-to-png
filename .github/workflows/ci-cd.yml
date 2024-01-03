@@ -12,23 +12,22 @@ jobs:
       url: https://pypi.org/p/convert-tif-to-png
     permissions:
       id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
-    steps:
       steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-  
-        - name: Set up Python
-          uses: actions/setup-python@v2
-          with:
-            python-version: '3.x'
-  
-        - name: Install Poetry
-          run: |
-            curl -sSL https://install.python-poetry.org | python3 -
-  
-        - name: Build Python distributions
-          run: |
-            poetry build
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Build Python distributions
+        run: |
+          poetry build
 
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
