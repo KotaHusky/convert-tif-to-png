@@ -1,0 +1,55 @@
+[tool.coverage.run]
+branch = true
+source = [ "src" ]
+
+[tool.coverage.report]
+exclude_lines = ['if TYPE_CHECKING:']
+show_missing = true
+
+[tool.pytest.ini_options]
+addopts = "--cov=convert_tif_to_png --cov-fail-under=50 --cov-report=html:../../../coverage/libs/util/convert-tif-to-png/html --cov-report=xml:../../../coverage/libs/util/convert-tif-to-png/coverage.xml --html=../../../reports/libs/util/convert-tif-to-png/unittests/html/index.html --junitxml=../../../reports/libs/util/convert-tif-to-png/unittests/junit.xml"
+
+[tool.poetry]
+name = "convert-tif-to-png"
+version = "1.0.4"
+description = "A utility to convert TIF images to PNG with optional resizing and renaming. Preserve quality of photos from apps like Adobe Lightroom while formatting files for social media sharing."
+authors = [ ]
+license = 'MIT'
+readme = 'README.md'
+packages = [
+  { include = "convert_tif_to_png" }
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion"
+]
+
+  [tool.poetry.dependencies]
+  python = ">=3.5"
+  pillow = "8.4.0"
+
+  [tool.poetry.group.dev.dependencies]
+  autopep8 = "2.0.2"
+  flake8 = "6.0.0"
+  pytest = "7.3.1"
+  pytest-sugar = "0.9.7"
+  pytest-cov = "4.1.0"
+  pytest-html = "3.2.0"
+
+[tool.poetry.scripts]
+convert-tif-to-png = "convert_tif_to_png.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
