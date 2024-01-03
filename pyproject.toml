@@ -11,7 +11,7 @@ addopts = "--cov=convert_tif_to_png --cov-fail-under=50 --cov-report=html:../../
 
 [tool.poetry]
 name = "convert-tif-to-png"
-version = "1.0.4"
+version = "1.0.6"
 description = "A utility to convert TIF images to PNG with optional resizing and renaming. Preserve quality of photos from apps like Adobe Lightroom while formatting files for social media sharing."
 authors = [ ]
 license = 'MIT'

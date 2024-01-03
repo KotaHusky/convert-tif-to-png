@@ -9,6 +9,11 @@ This Python script converts TIF images to PNG format. It allows for resizing the
 - Python 3.5+
 - PIL (Pillow) library
 
+## Development
+
+`poetry` is used to manage dependencies and virtual environments.
+`GitHub Actions` is used for CI/CD, with a trusted publishing connection to PyPi.
+
 ## Installation
 
 Install the convert-tif-to-png tool via pip:
